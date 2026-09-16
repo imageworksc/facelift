@@ -236,63 +236,22 @@
         <p class="quote-rail">Not sure where your site stands? <a href="#contact">Let's talk about your homepage <svg class="arrow icon" width="15" height="15" aria-hidden="true"><use href="#i-arrow"/></svg></a></p>
       </div>
 
+      <!-- The same homepage twice: as the pencil draft it starts from, and as
+           the St. Michael's home ImageWorks built from it. -->
       <figure class="fig reveal">
-        <svg viewBox="0 0 540 312" role="img" aria-labelledby="figTitle figDesc" class="fig-svg">
-          <title id="figTitle">The same record, played on a new machine</title>
-          <desc id="figDesc">The same disc shown twice: on the left as a turntable with a tonearm, on the right as a modern digital player with a progress ring and waveform.</desc>
-
-          <!-- THEN: turntable -->
-          <g opacity="0.72">
-            <rect x="18" y="30" width="214" height="214" rx="2" fill="#ffffff" stroke="var(--border)" stroke-width="2"/>
-            <g class="fig-disc">
-              <circle cx="118" cy="126" r="64" fill="#ffffff" stroke="var(--faint)" stroke-width="2"/>
-              <circle cx="118" cy="126" r="53" fill="none" stroke="var(--faint)" stroke-width="1.4" opacity=".55"/>
-              <circle cx="118" cy="126" r="42" fill="none" stroke="var(--faint)" stroke-width="1.4" opacity=".45"/>
-              <circle cx="118" cy="126" r="31" fill="none" stroke="var(--faint)" stroke-width="1.4" opacity=".35"/>
-              <circle cx="118" cy="126" r="16" fill="var(--border)"/>
-              <circle cx="118" cy="126" r="4" fill="#ffffff"/>
-              <circle cx="118" cy="82" r="2.2" fill="var(--faint)" opacity=".5"/>
-            </g>
-            <circle cx="206" cy="66" r="9" fill="#ffffff" stroke="var(--navy)" stroke-width="2.4"/>
-            <path d="M206 66 L152 104" stroke="var(--navy)" stroke-width="3" stroke-linecap="round"/>
-            <rect x="136" y="104" width="18" height="11" rx="2.5" transform="rotate(-37 145 109)" fill="#ffffff" stroke="var(--navy)" stroke-width="2.2"/>
-            <circle cx="52" cy="214" r="9" fill="none" stroke="var(--border)" stroke-width="2"/>
-            <rect x="76" y="209" width="34" height="10" rx="5" fill="none" stroke="var(--border)" stroke-width="2"/>
-          </g>
-          <text x="125" y="286" class="fig-label" text-anchor="middle">Same record</text>
-
-          <!-- bridge -->
-          <g>
-            <line x1="248" y1="137" x2="286" y2="137" stroke="var(--green)" stroke-width="2.5" stroke-linecap="round" stroke-dasharray="1 8"/>
-            <path d="M288 129 L300 137 L288 145" fill="none" stroke="var(--green-ink)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
-          </g>
-
-          <!-- NOW: digital player -->
-          <g>
-            <rect x="308" y="30" width="214" height="214" rx="2" fill="#ffffff" stroke="var(--border)" stroke-width="2"/>
-            <rect x="308" y="30" width="214" height="4" fill="var(--green)"/>
-            <circle cx="415" cy="114" r="64" fill="var(--tint-blue)"/>
-            <circle cx="415" cy="114" r="64" fill="none" stroke="var(--blue)" stroke-width="1.6" opacity=".38"/>
-            <circle cx="415" cy="114" r="48" fill="none" stroke="var(--blue)" stroke-width="1.6" opacity=".28"/>
-            <circle cx="415" cy="114" r="32" fill="none" stroke="var(--blue)" stroke-width="1.6" opacity=".2"/>
-            <path class="fig-ring" d="M415 50 A64 64 0 1 1 374 163" fill="none" stroke="var(--green)" stroke-width="5" stroke-linecap="round"/>
-            <circle cx="415" cy="114" r="16" fill="#ffffff"/>
-            <circle cx="415" cy="114" r="6" fill="var(--navy)"/>
-            <g class="fig-wave" stroke-linecap="round" stroke-width="4.5">
-              <line x1="346" y1="209" x2="346" y2="219" stroke="var(--border)"/>
-              <line x1="361" y1="201" x2="361" y2="227" stroke="var(--blue)"/>
-              <line x1="376" y1="193" x2="376" y2="235" stroke="var(--blue)"/>
-              <line x1="391" y1="205" x2="391" y2="223" stroke="var(--green)"/>
-              <line x1="406" y1="188" x2="406" y2="240" stroke="var(--green-ink)"/>
-              <line x1="421" y1="203" x2="421" y2="225" stroke="var(--green)"/>
-              <line x1="436" y1="196" x2="436" y2="232" stroke="var(--blue)"/>
-              <line x1="451" y1="206" x2="451" y2="222" stroke="var(--blue)"/>
-              <line x1="466" y1="210" x2="466" y2="218" stroke="var(--border)"/>
-              <line x1="481" y1="211" x2="481" y2="217" stroke="var(--border)"/>
-            </g>
-          </g>
-          <text x="415" y="286" class="fig-label fig-label-now" text-anchor="middle">New machine</text>
-        </svg>
+        <div class="fig-pair">
+          <div class="fig-shot fig-shot--then">
+            <img src="assets/draft-wireframe.svg" width="600" height="600" loading="lazy" decoding="async" alt="A pencil wireframe of a homepage: header, hero image with a headline, two content panels, and a split section with a round photo and a button.">
+            <span class="fig-label">Same record</span>
+          </div>
+          <span class="fig-bridge" aria-hidden="true">
+            <svg viewBox="0 0 56 16" width="56" height="16"><line x1="2" y1="8" x2="38" y2="8" stroke="var(--green)" stroke-width="2.5" stroke-linecap="round" stroke-dasharray="1 8"/><path d="M42 1 L52 8 L42 15" fill="none" stroke="var(--green-ink)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </span>
+          <div class="fig-shot fig-shot--now">
+            <img src="assets/st-michaels-home.webp" width="1000" height="1000" loading="lazy" decoding="async" alt="The St. Michael's homepage designed by ImageWorks Creative: an American flag hero reading 'Take Command of Your Back Office', two service panels, and a 'Discover CrossPoint' feature section.">
+            <span class="fig-label fig-label-now">New machine</span>
+          </div>
+        </div>
         <figcaption class="fig-cap">Your content stays. What people see it on gets rebuilt.</figcaption>
       </figure>
     </div>

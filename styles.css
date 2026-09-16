@@ -1087,21 +1087,68 @@ html:not([data-anim="on"]) .hl { background-size: 100% .34em; }
    -------------------------------------------------------------------------- */
 .split {
   display: grid;
-  grid-template-columns: minmax(0, 1.05fr) minmax(0, .95fr);
-  gap: clamp(36px, 5vw, 64px);
+  grid-template-columns: minmax(0, .82fr) minmax(0, 1.18fr);
+  gap: clamp(32px, 4vw, 56px);
   align-items: center;
 }
 .fig { margin: 0; max-width: 100%; }
-.fig-svg { width: 100%; height: auto; display: block; overflow: visible; }
+
+/* The same page twice: the pencil draft on the left, the finished home on the
+   right, the green bridge between them. Both squares, both card-shaped. */
+.fig-pair {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto minmax(0, 1fr);
+  gap: clamp(10px, 1.6vw, 18px);
+  align-items: center;
+}
+.fig-shot {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 14px;
+  min-width: 0;
+}
+.fig-shot img {
+  width: 100%;
+  height: auto;
+  aspect-ratio: 1;
+  object-fit: cover;
+  object-position: top;
+  border-radius: var(--r);
+  transition: transform .45s var(--ease), box-shadow .45s var(--ease), opacity .45s var(--ease);
+}
+/* the draft: paper-flat, a hairline, a little faded */
+.fig-shot--then img {
+  background: #fbfcfd;
+  box-shadow: inset 0 0 0 1px var(--border), var(--shadow-flat);
+  opacity: .9;
+}
+/* the finished page: lit, carried on the card shadow, the green rule at its head */
+.fig-shot--now img {
+  border-top: 3px solid var(--green);
+  box-shadow: var(--shadow-card);
+}
+.fig-shot--now:hover img {
+  transform: translateY(-4px);
+  box-shadow: 0 1px 3px rgba(20, 40, 80, .08), 0 22px 44px rgba(20, 40, 80, .16);
+}
+.fig-shot--then:hover img { opacity: 1; }
+
+.fig-bridge { display: block; color: var(--green); }
+.fig-bridge svg { display: block; }
+/* the dots run towards the new page, once, when the section is read */
+.fig-bridge line { stroke-dashoffset: 0; }
+.is-revealed .fig-bridge line { animation: bridge-run 1.2s linear 2; }
+@keyframes bridge-run { to { stroke-dashoffset: -18; } }
+
 .fig-label {
-  font-family: 'Plus Jakarta Sans', sans-serif;
   font-size: 11px; font-weight: 800;
   letter-spacing: 1.6px; text-transform: uppercase;
-  fill: var(--faint);
+  color: var(--faint);
 }
-.fig-label-now { fill: var(--green-ink); }
+.fig-label-now { color: var(--green-ink); }
 .fig-cap {
-  margin-top: 18px;
+  margin-top: 22px;
   font-size: 14px; line-height: 1.6;
   color: var(--muted);
   text-align: center;
@@ -1109,26 +1156,13 @@ html:not([data-anim="on"]) .hl { background-size: 100% .34em; }
   margin-inline: auto;
 }
 
-/* the disc turns, the progress ring draws, the waveform breathes */
-.fig-disc { transform-origin: 118px 126px; animation: figSpin 18s linear infinite; }
-.fig-ring { stroke-dasharray: 302; stroke-dashoffset: 302; }
-.is-revealed .fig-ring { animation: figRing 1.6s var(--ease) .3s forwards; }
-html:not([data-anim="on"]) .fig-ring { stroke-dashoffset: 0; }
-.fig-wave line { transform-origin: center; transform-box: fill-box; animation: figWave 2.4s ease-in-out infinite; }
-.fig-wave line:nth-child(2n) { animation-delay: -.6s; }
-.fig-wave line:nth-child(3n) { animation-delay: -1.2s; }
-.fig-wave line:nth-child(5n) { animation-delay: -1.8s; }
-
-@keyframes figSpin { to { transform: rotate(360deg); } }
-@keyframes figRing { to { stroke-dashoffset: 0; } }
-@keyframes figWave {
-  0%, 100% { transform: scaleY(1); }
-  50%      { transform: scaleY(.55); }
-}
-
 @media (max-width: 900px) {
   .split { grid-template-columns: 1fr; gap: 40px; }
-  .fig { max-width: 480px; margin-inline: auto; }
+  .fig { max-width: 560px; margin-inline: auto; }
+}
+@media (max-width: 420px) {
+  .fig-pair { grid-template-columns: 1fr; gap: 20px; }
+  .fig-bridge { justify-self: center; transform: rotate(90deg); margin-block: 14px; }
 }
 
 /* --------------------------------------------------------------------------
@@ -1663,8 +1697,8 @@ html:not([data-anim="on"]) .fig-ring { stroke-dashoffset: 0; }
   .fb-win--new::before { transform: scaleX(1); animation: none; }
   .fb-stage:hover .fb-win--new { transform: none; }
   .fb-queue li:hover { transform: none; }
-  .fig-disc, .fig-wave line { animation: none; }
-  .fig-ring { stroke-dashoffset: 0; animation: none; }
+  .fig-bridge line { animation: none; }
+  .fig-shot--now:hover img { transform: none; }
   .win:hover, .step:hover .step-body, .figure-card:hover { transform: none; }
   .step:hover .step-num, .win:hover .win-icon { transform: none; }
   .figure-card:hover .figure-card__num { transform: none; }
