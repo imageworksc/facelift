@@ -1,9 +1,10 @@
 /* ==========================================================================
    ImageWorks Creative — Homepage Facelift
 
-   Everything else on the page is CSS. The one thing that needs a script is the
-   entrance reveal, because it has to know when a section comes into view.
-   Same routine the Branding page runs, unchanged.
+   Everything else on the page is CSS. Two things need a script: the entrance
+   reveal, because it has to know when a section comes into view, and the FAQ,
+   which scrolls an answer back into view if it opens off the edge. Both are
+   the system's own routines, unchanged.
 
    Loaded with `defer`, so the document is parsed by the time this runs.
    ========================================================================== */
@@ -12,6 +13,7 @@
 
 const root = document.documentElement;
 const reduced = window.matchMedia('(prefers-reduced-motion: reduce)');
+const ANCHOR_OFFSET = 24;
 
 /* --------------------------------------------------------------------------
    Entrance reveals. Once per element, and only where the browser supports
@@ -61,4 +63,37 @@ function setupReveals() {
   revealRemainder();
 }
 
+/* --------------------------------------------------------------------------
+   FAQ. The accordion itself is native <details>; this only nudges an opened
+   answer back into view if it ended up above the top edge or past the fold.
+   -------------------------------------------------------------------------- */
+function setupFaq() {
+  const faq = document.querySelector('[data-faq]');
+  if (!faq) return;
+
+  for (const item of faq.querySelectorAll('details')) {
+    item.addEventListener('toggle', () => {
+      if (!item.open) return;
+
+      const settle = () => {
+        const box = item.getBoundingClientRect();
+        const hiddenAbove = box.top < ANCHOR_OFFSET;
+        const hiddenBelow = box.bottom > window.innerHeight &&
+                            box.height < window.innerHeight - ANCHOR_OFFSET;
+        if (!hiddenAbove && !hiddenBelow) return;
+
+        window.scrollTo({
+          top: box.top + window.scrollY - ANCHOR_OFFSET,
+          behavior: reduced.matches ? 'auto' : 'smooth',
+        });
+      };
+
+      // wait out the height transition before measuring
+      if (reduced.matches) settle();
+      else window.setTimeout(settle, 380);
+    });
+  }
+}
+
 setupReveals();
+setupFaq();

@@ -127,6 +127,9 @@
       <line x1="5" y1="12" x2="19" y2="12" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round"/>
       <polyline points="12 5 19 12 12 19" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/>
     </symbol>
+    <symbol id="i-chevron" viewBox="0 0 24 24">
+      <polyline points="6 9 12 15 18 9" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/>
+    </symbol>
     <!-- Facelift page additions, drawn at the same weight as the set above. -->
     <symbol id="i-brush" viewBox="0 0 24 24">
       <g fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
@@ -479,33 +482,45 @@
 
   <!-- 9 · FAQ ------------------------------------------------------------ -->
   <section class="band" id="faq" aria-labelledby="faq-title">
-    <div class="wrap stack">
-      <h2 class="sec-title reveal" id="faq-title">Common Questions</h2>
+    <div class="sec-head reveal">
+      <h2 class="sec-title" id="faq-title">Common Questions</h2>
+    </div>
 
-      <!-- Each question and its answer are one object, so they sit in one
-           card — the same answer card the Branding page sets its question in,
-           with the blue rule at its head. Nothing folds away. -->
-      <div class="faq reveal">
-        <article class="answer-card">
-          <h3 class="answer-card__title">Do I need to rebuild the rest of my website?</h3>
-          <p>No. You can update additional pages whenever you want — or leave them as they are.</p>
-        </article>
-        <article class="answer-card">
-          <h3 class="answer-card__title">What website platforms can you work with?</h3>
-          <p>We work with <strong>WordPress, Drupal, Webflow, and in some cases Wix</strong>. We can also build on a <strong>modern AI-managed web stack</strong> when that makes more sense. Our goal is to work with what you already have whenever practical — not force you onto a new platform just to redesign your homepage.</p>
-        </article>
-        <article class="answer-card">
-          <h3 class="answer-card__title">Is this just a new template?</h3>
-          <p>No. We custom-design the homepage around your company, brand, content, customers, and goals.</p>
-        </article>
-        <article class="answer-card">
-          <h3 class="answer-card__title">Will you update the content too?</h3>
-          <p>Yes. We can improve the messaging, structure, calls-to-action, SEO, AIO, and search intent as part of the facelift.</p>
-        </article>
-        <article class="answer-card">
-          <h3 class="answer-card__title">What if my website really does need a complete rebuild?</h3>
-          <p>We'll tell you. If the platform, structure, functionality, or overall site has bigger problems, a full redesign may be the better investment.</p>
-        </article>
+    <div class="wrap">
+      <!-- The system's accordion: closed rows are quiet hairlines, the open one
+           lifts out of the list as a card. `name` keeps one open at a time. -->
+      <div class="faq reveal" data-faq>
+        <details class="faq-item" name="fl-faq">
+          <summary>Do I need to rebuild the rest of my website?<span class="faq-mark" aria-hidden="true"><svg width="16" height="16"><use href="#i-chevron"/></svg></span></summary>
+          <div class="faq-answer">
+            <p>No. You can update additional pages whenever you want — or leave them as they are.</p>
+          </div>
+        </details>
+        <details class="faq-item" name="fl-faq">
+          <summary>What website platforms can you work with?<span class="faq-mark" aria-hidden="true"><svg width="16" height="16"><use href="#i-chevron"/></svg></span></summary>
+          <div class="faq-answer">
+            <p>We work with <strong>WordPress, Drupal, Webflow, and in some cases Wix</strong>. We can also build on a <strong>modern AI-managed web stack</strong> when that makes more sense.</p>
+            <p>Our goal is to work with what you already have whenever practical — not force you onto a new platform just to redesign your homepage.</p>
+          </div>
+        </details>
+        <details class="faq-item" name="fl-faq">
+          <summary>Is this just a new template?<span class="faq-mark" aria-hidden="true"><svg width="16" height="16"><use href="#i-chevron"/></svg></span></summary>
+          <div class="faq-answer">
+            <p>No. We custom-design the homepage around your company, brand, content, customers, and goals.</p>
+          </div>
+        </details>
+        <details class="faq-item" name="fl-faq">
+          <summary>Will you update the content too?<span class="faq-mark" aria-hidden="true"><svg width="16" height="16"><use href="#i-chevron"/></svg></span></summary>
+          <div class="faq-answer">
+            <p>Yes. We can improve the messaging, structure, calls-to-action, SEO, AIO, and search intent as part of the facelift.</p>
+          </div>
+        </details>
+        <details class="faq-item" name="fl-faq">
+          <summary>What if my website really does need a complete rebuild?<span class="faq-mark" aria-hidden="true"><svg width="16" height="16"><use href="#i-chevron"/></svg></span></summary>
+          <div class="faq-answer">
+            <p>We'll tell you. If the platform, structure, functionality, or overall site has bigger problems, a full redesign may be the better investment.</p>
+          </div>
+        </details>
       </div>
     </div>
   </section>
