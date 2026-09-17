@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>St. Michael's — draft</title>
+<!-- The "same record": the St. Michael's homepage content with no design on it
+     yet. Browser defaults on purpose — serif text, blue underlined links, a
+     grey default button, and the photos not placed. Rendered to
+     ../incomplete-site.webp at 480x600 css px, 2x. -->
+<style>
+  html { background: #fff; }
+  body {
+    margin: 0;
+    padding: 14px 18px 18px;
+    width: 480px;
+    height: 600px;
+    box-sizing: border-box;
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 12.5px;
+    line-height: 1.35;
+    color: #000;
+  }
+  a { color: #0000ee; }
+  h1 { font-size: 21px; margin: 0 0 2px; }
+  h2 { font-size: 15.5px; margin: 14px 0 4px; }
+  p { margin: 0 0 6px; }
+  ul { margin: 2px 0 6px; padding-left: 22px; }
+  li { margin: 0; }
+  hr { border: 0; border-top: 1px solid #999; margin: 8px 0 10px; }
+  .nav { font-size: 12px; margin: 0 0 6px; }
+  .nav a { margin-right: 2px; }
+  .missing {
+    display: flex; align-items: center; justify-content: center; gap: 8px;
+    height: 100px; margin: 4px 0 10px;
+    border: 1px solid #c9c9c9; background: #f3f3f3;
+    color: #777; font-family: Arial, Helvetica, sans-serif; font-size: 11px;
+  }
+  .missing svg { width: 16px; height: 16px; flex: none; }
+  .missing.small { height: 56px; width: 150px; float: left; margin: 2px 12px 4px 0; }
+  .todo { color: #b00; font-family: Arial, Helvetica, sans-serif; font-size: 10.5px; }
+  button { font-family: Arial, Helvetica, sans-serif; font-size: 12px; margin-top: 2px; }
+  table { border-collapse: collapse; font-size: 11.5px; margin: 6px 0 4px; }
+  td { border: 1px solid #bbb; padding: 2px 6px; }
+</style>
+</head>
+<body>
+  <h1>St. Michael's</h1>
+  <p class="nav">
+    <a href="#">About</a> | <a href="#">Services</a> | <a href="#">Contract Vehicles</a> | <a href="#">News</a> | <a href="#">Careers</a> | <a href="#">Contact</a>
+  </p>
+  <hr>
+
+  <div class="missing">
+    <svg viewBox="0 0 16 16" aria-hidden="true"><rect x="1.5" y="2.5" width="13" height="11" fill="#fff" stroke="#999"/><path d="M3 11l3-4 2.5 3 2-2 2.5 3" fill="none" stroke="#999"/><circle cx="5.5" cy="5.5" r="1" fill="#999"/><path d="M10 2.5v3h3" fill="none" stroke="#999"/></svg>
+    hero-flag.jpg (image not found)
+  </div>
+
+  <h2 style="margin-top:0">Take Command of Your Back Office&reg;</h2>
+  <p>St. Michael's brings concentrated expertise to back office management, allowing government agencies to focus on what they do best: <i>keeping America safe.</i></p>
+
+  <p><b>Improving results for core business processes:</b></p>
+  <ul>
+    <li>Back Office Support</li>
+    <li>Finance &amp; Accounting</li>
+    <li>Program Management</li>
+    <li>Audit Readiness</li>
+  </ul>
+
+  <h2>From audit readiness to audit sustainment</h2>
+  <p>St. Michael's brings proven expertise and experience to overcome challenges, implement compliant and sustainable business practices, and prepare organizations to achieve an unmodified audit opinion.</p>
+  <button type="button">Go</button>
+
+  <h2>Discover CrossPoint&reg;</h2>
+  <div class="missing small">
+    <svg viewBox="0 0 16 16" aria-hidden="true"><rect x="1.5" y="2.5" width="13" height="11" fill="#fff" stroke="#999"/><path d="M3 11l3-4 2.5 3 2-2 2.5 3" fill="none" stroke="#999"/><circle cx="5.5" cy="5.5" r="1" fill="#999"/></svg>
+    photo tbd
+  </div>
+  <p>One unified and comprehensive resource to improve financial and program management success. CrossPoint consolidates St. Michael's collective experience into an easy-to-use reference source.</p>
+  <p><a href="#">Learn more</a> <span class="todo">&larr; TODO: button style</span></p>
+</body>
+</html>

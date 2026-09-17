@@ -1111,15 +1111,15 @@ html:not([data-anim="on"]) .hl { background-size: 100% .34em; }
 .fig-shot img {
   width: 100%;
   height: auto;
-  aspect-ratio: 1;
+  aspect-ratio: 4 / 5;
   object-fit: cover;
   object-position: top;
   border-radius: var(--r);
   transition: transform .45s var(--ease), box-shadow .45s var(--ease), opacity .45s var(--ease);
 }
-/* the draft: paper-flat, a hairline, a little faded */
+/* the unfinished site: flat, a hairline, a little faded */
 .fig-shot--then img {
-  background: #fbfcfd;
+  background: #fff;
   box-shadow: inset 0 0 0 1px var(--border), var(--shadow-flat);
   opacity: .9;
 }
